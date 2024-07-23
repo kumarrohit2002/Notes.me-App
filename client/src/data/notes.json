@@ -1,0 +1,20 @@
+[
+    {
+        "id":3,
+        "color":"bg-pink-400",
+        "text":"1 This is how a Note on Note.me looks like! Very simple, clean and asthetic! 😍",
+        "date":"July, 01 2024"
+    },
+    {
+        "id":2,
+        "color":"bg-orange-400",
+        "text":"2 This is how a Note on Note.me looks like! Very simple, clean and asthetic! 😍",
+        "date":"July, 01 2024"
+    },
+    {
+        "id":1,
+        "color":"bg-red-400",
+        "text":"3 This is how a Note on Note.me looks like! Very simple, clean and asthetic! 😍",
+        "date":"July, 02 2024"
+    }
+]
