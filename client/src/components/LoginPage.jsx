@@ -27,7 +27,7 @@ const LoginPage = () => {
         try {
             if (isLogin) {
                 console.log("Logging in with", userData);
-                const res = await axios.post(`http://localhost:4000/api/v1/user/login`, userData);
+                const res = await axios.post(`https://vercel.com/rohit-kumars-projects-4484f538/notesme/AQjgV5ftUrF99rj7Ko2xuzK94Bxr/user/login`, userData);
                 if (res.data) {
                     toast.success("Login Successfully!", { position: "top-center" });
                     const token = res.data.Token;
@@ -40,7 +40,7 @@ const LoginPage = () => {
                 }
             } else {
                 console.log("Signing up with", userData);
-                const res = await axios.post(`http://localhost:4000/api/v1/user/signup`, userData); // Use the appropriate signup URL
+                const res = await axios.post(`https://vercel.com/rohit-kumars-projects-4484f538/notesme/AQjgV5ftUrF99rj7Ko2xuzK94Bxr/user/signup`, userData); // Use the appropriate signup URL
                 if (res.data) {
                     toast.success("Signup Successfully!", { position: "top-center" });
                     setIsLogin(true);

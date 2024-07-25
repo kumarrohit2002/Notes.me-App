@@ -21,7 +21,7 @@ const NoteCard = (props) => {
 
   const onEdit = async (id, note) => {
     try {
-      await axios.post("http://localhost:4000/api/v1/notes/update", { _id: id, text: note.text });
+      await axios.post("https://vercel.com/rohit-kumars-projects-4484f538/notesme/AQjgV5ftUrF99rj7Ko2xuzK94Bxr/notes/update", { _id: id, text: note.text });
       fetchData();
       setIsedit(false);
     } catch (error) {

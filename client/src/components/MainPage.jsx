@@ -16,7 +16,7 @@ const MainPage = () => {
     const fetchData = async () => {
         try {
             const token = localStorage.getItem("Token");
-            const response = await axios.post("http://localhost:4000/api/v1/notes/getusernotes", null, {
+            const response = await axios.post("https://vercel.com/rohit-kumars-projects-4484f538/notesme/AQjgV5ftUrF99rj7Ko2xuzK94Bxr/notes/getusernotes", null, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -39,7 +39,7 @@ const MainPage = () => {
 
     const saveNotes = async(id,newText) => {
         const token = localStorage.getItem("Token");
-        await axios.post("http://localhost:4000/api/v1/notes/addnotes",newText,{
+        await axios.post("https://vercel.com/rohit-kumars-projects-4484f538/notesme/AQjgV5ftUrF99rj7Ko2xuzK94Bxr/notes/addnotes",newText,{
             headers: {
                 'Authorization': `Bearer ${token}`
             }
