@@ -3,6 +3,9 @@ const cors = require('cors');
 const app = express();
 require('dotenv').config();
 
+
+console.log("running")
+
 app.use(express.json());
 // Use CORS middleware
 app.use(cors(
