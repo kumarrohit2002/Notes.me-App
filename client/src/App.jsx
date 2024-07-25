@@ -16,7 +16,6 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginPage/>} />
         <Route path="/notes" element={<MainPage/>} />
-       
       </Routes>
       <ToastContainer />
     </div>

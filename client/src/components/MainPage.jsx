@@ -4,7 +4,12 @@ import NoteCard from './NoteCard';
 import methods from '../utils/LocalStorage';
 import {  useNavigate } from "react-router-dom";
 import axios from "axios"
-import { toast } from 'react-toastify';
+import { toast } from 'react-toastify'; 
+import { ReactTyped} from "react-typed";
+
+const NOTES_URL=import.meta.env.REACT_APP_NOTES_URL;
+console.log("NOTES URL: "+NOTES_URL);
+
 
 const MainPage = () => {
     const colorArray=["bg-pink-500","bg-red-500","bg-orange-500","bg-yellow-500","bg-gray-500"]
@@ -16,7 +21,7 @@ const MainPage = () => {
     const fetchData = async () => {
         try {
             const token = localStorage.getItem("Token");
-            const response = await axios.post("https://notesme-one.vercel.app/api/v1/notes/getusernotes", null, {
+            const response = await axios.post(`${NOTES_URL}/getusernotes`, null, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -39,7 +44,7 @@ const MainPage = () => {
 
     const saveNotes = async(id,newText) => {
         const token = localStorage.getItem("Token");
-        await axios.post("https://notesme-one.vercel.app/api/v1/notes/addnotes",newText,{
+        await axios.post(`${NOTES_URL}/addnotes`,newText,{
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -86,7 +91,7 @@ const MainPage = () => {
     const removeNotes = async(_id) => {
         const id={_id:_id};
         const token = localStorage.getItem("Token");
-        await axios.post("http://localhost:4000/api/v1/notes/remove",id,{
+        await axios.post(`${NOTES_URL}/remove`,id,{
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -130,7 +135,14 @@ const MainPage = () => {
                 </div>
 
                 <div className="text-start mt-10">
-                    <h1 className="text-3xl">Hello, <span className="font-bold">{`${name}`}</span></h1>
+                    <h1 className="text-3xl">Hello, <span className="font-bold">
+                        <ReactTyped
+                                className="bg-gradient-to-r from-blue-400 to-indigo-400 font-bold inline-block text-transparent bg-clip-text"
+                                strings={[`${name}`]}
+                                typeSpeed={50}
+                                backSpeed={100}
+                                loop={true}
+                            /></span></h1>
                     <p className="text-gray-500">All your notes are here, in one place!</p>
                 </div>
 

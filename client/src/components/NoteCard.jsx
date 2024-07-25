@@ -2,6 +2,10 @@ import { Icon } from '@iconify/react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
+
+const NOTES_URL=import.meta.env.REACT_APP_NOTES_URL;
+console.log("NOTES URL: "+NOTES_URL);
+
 const NoteCard = (props) => {
   const [isedit, setIsedit] = useState(false);
   const { text, date, color, _id } = props.note;
@@ -21,7 +25,7 @@ const NoteCard = (props) => {
 
   const onEdit = async (id, note) => {
     try {
-      await axios.post("https://notesme-one.vercel.app/api/v1/notes/update", { _id: id, text: note.text });
+      await axios.post(`${NOTES_URL}/update`, { _id: id, text: note.text });
       fetchData();
       setIsedit(false);
     } catch (error) {
