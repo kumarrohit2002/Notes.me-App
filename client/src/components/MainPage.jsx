@@ -16,7 +16,7 @@ const MainPage = () => {
     const fetchData = async () => {
         try {
             const token = localStorage.getItem("Token");
-            const response = await axios.post("https://notesme-one.vercel.app/notes/getusernotes", null, {
+            const response = await axios.post("https://notesme-one.vercel.app/api/v1/notes/getusernotes", null, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -39,7 +39,7 @@ const MainPage = () => {
 
     const saveNotes = async(id,newText) => {
         const token = localStorage.getItem("Token");
-        await axios.post("https://notesme-one.vercel.app/notes/addnotes",newText,{
+        await axios.post("https://notesme-one.vercel.app/api/v1/notes/addnotes",newText,{
             headers: {
                 'Authorization': `Bearer ${token}`
             }
