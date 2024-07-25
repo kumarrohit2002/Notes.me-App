@@ -30,7 +30,7 @@ app.use('/api/v1/notes', notesRoutes);
 
 
 
-clg
+
 
 
 const connect = require('./src/config/database');
