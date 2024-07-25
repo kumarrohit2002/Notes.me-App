@@ -9,6 +9,10 @@ const NotesSchama=new mongoose.Schema({
     date:{
         type: 'string',
         required: true,
+    },
+    color:{
+        type: 'string',
+        required: true,
     }
 })
 
