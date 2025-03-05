@@ -50,8 +50,12 @@ const LoginPage = () => {
                 }
             }
         } catch (error) {
-            console.error(error.message);
-            toast.error(`Operation failed, Error: ${error.message}`, { position: "top-center" });
+            console.error(error);
+            if(error.response.data.message){
+                toast.error(`${error.response.data.message}`, { position: "top-center" });
+            }else{
+            toast.error(`${error.message}`, { position: "top-center" });
+            }
         }
     };
 

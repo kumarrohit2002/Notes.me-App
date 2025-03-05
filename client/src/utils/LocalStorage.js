@@ -7,7 +7,6 @@ function addToLocalStorage(key, value) {
 
 }
 
-
 function getFromLocalStorage(key){
     let value = localStorage.getItem(key);
     if(!value){
@@ -18,8 +17,8 @@ function getFromLocalStorage(key){
     }catch(error){
         return value;
     }
-
 }
+
 function updateFromLocalStorage(key,updatedVal){
     let value = localStorage.getItem(key);
     if(!value){

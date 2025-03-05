@@ -7,7 +7,6 @@ exports.signup = async (req, res) => {
     try {
         // Fetch user info from req body
         const { name, email, password } = req.body;
-
         // Validation
         if (!name || !email || !password) {
             return res.status(400).json({
@@ -15,15 +14,13 @@ exports.signup = async (req, res) => {
                 message: "All fields are required"
             });
         }
-
         // Password validation
         if (password.length !== 6) {
             return res.status(400).json({
                 success: false,
-                message: "Please enter a valid password (6 characters)"
+                message: "Please enter a valid password(6 char)"
             });
         }
-
         // User already exists
         const existingUser = await User.findOne({ email: email });
         if (existingUser) {
@@ -32,9 +29,7 @@ exports.signup = async (req, res) => {
                 message: "User already exists"
             });
         }
-
         const hashPassword = await bcrypt.hash(password, 8);
-
         const user = await User.create({ name: name, email: email, password: hashPassword });
 
         res.status(201).json({
@@ -68,7 +63,7 @@ exports.login = async (req, res) => {
         if (!user) {
             return res.status(402).json({
                 success: false,
-                message: "This email is not registered"
+                message: "email is not registered"
             });
         }
 

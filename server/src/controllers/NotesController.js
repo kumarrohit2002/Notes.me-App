@@ -6,14 +6,12 @@ exports.addNotes = async (req, res) => {
         const { text, date ,color} = req.body;
         const userId = req.user.id;  // Extracted from the decoded token
         console.log(req.user);
-
         if (!text || !date || !color) {
             return res.status(400).json({
                 success: false,
                 message: "All fields are required"
             });
         }
-
         const note = await Notes.create({ text, date,color });
 
         //push in add note in user id
